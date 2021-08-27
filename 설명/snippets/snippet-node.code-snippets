@@ -14,7 +14,7 @@
 			"",
 			"",
 			"/*************** server init **************/",
-			"app.listen(port, serverInit(port))"
+			"app.listen(port, () => { console.log('http://127.0.0.1:'+port) })"
 		],
 		"description": "node init"
 	}
