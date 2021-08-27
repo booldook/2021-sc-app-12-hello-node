@@ -1,0 +1,23 @@
+{
+  "name": "13.hello-node",
+  "version": "1.0.0",
+  "description": "Hello World",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/booldook/2021-sc-app-12-hello-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/booldook/2021-sc-app-12-hello-node/issues"
+  },
+  "homepage": "https://github.com/booldook/2021-sc-app-12-hello-node#readme",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}
