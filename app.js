@@ -24,7 +24,7 @@ app.post('/book', (req, res, next) => {
 	const { name, content } = req.body
 	const id = books[books.length - 1].id + 1
 	books.push({ id, name, content })
-	res.status(200).json(books)
+	res.status(200).redirect('/book/list.html')
 })
 
 
