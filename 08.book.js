@@ -11,11 +11,6 @@ const books = [
 	{ id: 5, name: '춘향전', content: '그네타다 낚였네...' },
 ]
 
-/************** view engine ***************/
-app.set('view engine', 'ejs')
-app.set('views', './views')
-
-
 /*************** middleware ***************/
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -25,15 +20,14 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/', express.static('./public'))
 
 app.get('/book', (req, res, next) => {
-	const reverseBooks = books.slice().reverse();
-	res.status(200).render('list', { reverseBooks })
+	res.status(200).json(books.slice().reverse())
 })
 
 app.post('/book', (req, res, next) => {
 	const { name, content } = req.body
 	const id = books[books.length - 1].id + 1
 	books.push({ id, name, content })
-	res.status(200).redirect('/book')
+	res.status(200).redirect('/book/list.html')
 })
 
 
