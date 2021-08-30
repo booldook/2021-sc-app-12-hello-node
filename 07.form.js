@@ -11,13 +11,24 @@ const books = [
 	{ id: 5, name: '춘향전', content: '그네타다 낚였네...' },
 ]
 
+/*************** middleware ***************/
+// application/json
+app.use(express.json())
+
+// application/x-www-urlencoded
+app.use(express.urlencoded({ extended: false }))
+
 /*************** router init **************/
 app.use('/', express.static('./public'))
 app.get('/', (req, res, next) => {
-
+	// req.params.id (/book/:id)
+	// req.query.id (/book?id=2)
 })
 
 app.post('/book', (req, res, next) => {
+	// req.body (type: application/json): axios.post('/book', { params: {...} })
+	// req.body (type: application/x-www-urlencoded): <form method="post">...</form>
+	console.log(req.body)
 	res.send('받았음')
 })
 

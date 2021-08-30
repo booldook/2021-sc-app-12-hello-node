@@ -24,6 +24,16 @@
 		<form action="/book" method="post" class="p-4 border border-info rounded">
 			<div class="py-2"><input type="text" name="name" placeholder="도서명" class="form-control"></div>
 			<div class="py-2"><input type="text" name="content" placeholder="내용" class="form-control"></div>
+			<div class="py-5">
+				<input type="checkbox" name="hobby" id="music" value="music">
+				<label for="music" class="mr-3">음악감상</label>
+				<input type="checkbox" name="hobby" id="movie" value="movie">
+				<label for="movie" class="mr-3">영화감상</label>
+				<input type="checkbox" name="hobby" id="swimming" value="swimming">
+				<label for="swimming" class="mr-3">수영</label>
+				<input type="checkbox" name="hobby" id="running" value="running">
+				<label for="running" class="mr-3">조깅</label>
+			</div>
 			<button class="btn btn-primary">저장</button>
 		</form>
 	</div>
