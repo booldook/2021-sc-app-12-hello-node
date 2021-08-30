@@ -20,6 +20,10 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/', express.static('./public'))
 app.get('/', (req, res, next) => {})
 
+app.get('/book', (req, res, next) => {
+	res.status(200).json(books.slice().reverse())
+})
+
 app.post('/book', (req, res, next) => {
 	const { name, content } = req.body
 	const id = books[books.length - 1].id + 1
