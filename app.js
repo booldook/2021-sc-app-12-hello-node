@@ -7,7 +7,30 @@ const app = express()
 
 
 /*************** router init **************/
-app.get('/', (req, res, next) => {})
+
+// Middleware
+app.use((req, res, next) => {
+	res.send('주소 없어요')
+})
+
+// Static Router
+app.use('/', express.static('./public'))
+
+// GET Router
+app.get('/', (req, res, next) => {
+	res.send('index.html이 없어요')
+})
+
+// GET Router
+app.get('/book', (req, res, next) => {
+	res.send('/book')
+})
+
+// POST Router
+app.post('/book', (req, res, next) => {
+	res.send('POST/book')
+})
+
 
 
 /*************** server init **************/
