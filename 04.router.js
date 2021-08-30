@@ -9,7 +9,6 @@ const books = [
 	{ id: 2, name: '홍길동전', content: '아버지를 아버지라...' },
 	{ id: 3, name: '심청전', content: '임당수 네이놈...' },
 	{ id: 4, name: '콩쥐팥쥐전', content: '콩쥐 이것이...' },
-	{ id: 5, name: '춘향전', content: '그네타다 낚였네...' },
 ]
 
 /*************** router init **************/
@@ -17,16 +16,34 @@ app.get('/', (req, res, next) => {
 	res.send('/ 입니다.')
 })
 
-app.get('/book', (req, res, next) => {
-	const id = req.query.id;  // 문자열, http://127.0.0.1:3000/book?id=1
-	res.status(200).json( id ? books.filter(v => v.id == id) : books ) 
+app.get('/test', (req, res, next) => {
+	res.send('/test 입니다.')
 })
 
-app.get('/search', (req, res, next) => {
-	const q = req.query.q;  // 문자열, http://127.0.0.1:3000/search?q=춘향
-	if(!q) res.status(200).json([])
-	else res.status(200).json(books.filter(v => v.name.includes(q) || v.content.includes(q)))
+app.get('/book', (req, res, next) => {
+	res.status(200).json(books)
 })
+
+app.get('/book/1', (req, res, next) => {
+	const book = books.filter(v => v.id === 1)
+	res.status(200).json(book)
+})
+
+app.get('/book/2', (req, res, next) => {
+	const book = books.filter(v => v.id === 2)
+	res.status(200).json(book)
+})
+
+app.get('/book/3', (req, res, next) => {
+	const book = books.filter(v => v.id === 3)
+	res.status(200).json(book)
+})
+
+app.get('/book/4', (req, res, next) => {
+	const book = books.filter(v => v.id === 4)
+	res.status(200).json(book)
+})
+
 
 /*************** server init **************/
 app.listen(port, () => { console.log('http://127.0.0.1:'+port) })
